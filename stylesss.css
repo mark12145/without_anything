@@ -55,6 +55,26 @@ button {
   color: #555;
 }
 
+/* Admin Button Styling */
+.navbar nav a.admin-btn {
+  background: linear-gradient(135deg, #dc3545, #c82333);
+  color: #fff !important;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-left: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
+}
+
+.navbar nav a.admin-btn:hover {
+  background: linear-gradient(135deg, #c82333, #a71e2a);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.4);
+  color: #fff !important;
+}
+
 #theme-toggle {
   font-size: 20px;
 }
