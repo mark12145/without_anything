@@ -81,7 +81,7 @@ class RoomPriceUpdater {
         this.lastUpdateTimestamp = eventData.timestamp;
         
         // Show update notification
-        this.showUpdateNotification('Prices updated from admin panel!');
+        this.showUpdateNotification('✅ Prices updated from admin panel!');
         
         console.log(`Prices updated from event for ${this.roomType}:`, prices);
       }
@@ -237,18 +237,19 @@ class RoomPriceUpdater {
     notification.className = 'price-update-notification';
     notification.style.cssText = `
       position: fixed;
-      top: 20px;
+      top: 80px;
       right: 20px;
       background: linear-gradient(135deg, #28a745, #20c997);
       color: white;
       padding: 12px 20px;
       border-radius: 8px;
-      z-index: 10000;
+      z-index: 9999;
       font-weight: 600;
       box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
       animation: slideInRight 0.3s ease-out;
       font-size: 14px;
       max-width: 300px;
+      border-left: 4px solid #20c997;
     `;
     
     // Add animation keyframes
@@ -283,7 +284,7 @@ class RoomPriceUpdater {
     notification.textContent = message;
     document.body.appendChild(notification);
     
-    // Remove notification after 4 seconds with animation
+    // Remove notification after 5 seconds with animation
     setTimeout(() => {
       notification.style.animation = 'slideOutRight 0.3s ease-in';
       setTimeout(() => {
@@ -291,7 +292,7 @@ class RoomPriceUpdater {
           notification.parentNode.removeChild(notification);
         }
       }, 300);
-    }, 4000);
+    }, 5000);
   }
 
   // Cleanup method
